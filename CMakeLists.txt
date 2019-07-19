@@ -14,8 +14,6 @@ add_library(gridastar STATIC
 
 find_package(benchmark)
 
-message("Google Benchmark found")
-
 if(benchmark_FOUND)
 
     include_directories(${benchmark_INCLUDE_DIR})
@@ -29,5 +27,5 @@ if(benchmark_FOUND)
         ${benchmark_LIBRARIES}
         pthread)
 else()
-    message("Google Benchmark NOT found. It can be downloaded from https://github.com/google/benchmark")
+    message(STATUS "Google Benchmark NOT found. It can be downloaded from https://github.com/google/benchmark")
 endif()
